@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <locale>
 
 using namespace std;
@@ -13,6 +13,7 @@ int main() {
     setlocale(LC_ALL, "ru");
 
     int M, N;
+    int evenstr = 0;
 
     cout << "Введите количество строк М: ";
     cin >> M;
@@ -28,21 +29,18 @@ int main() {
     cout << "Введите элементы матрицы: " << endl;
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++) {
-            cin >> matrix[i][j];    
+            cin >> matrix[i][j];
         }
     }
 
-    int evenstr = 0;
     for (int i = 0; i < M; i++) {
-        bool even = true;
         for (int j = 0; j < N; j++) {
             if (matrix[i][j] % 2 != 0) {
-                even = false;
                 break;
             }
-        }
-        if (even > 0) {
-            evenstr = i + 1;
+            else {
+                evenstr = i + 1;
+            }
         }
     }
 
