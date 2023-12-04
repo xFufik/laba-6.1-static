@@ -14,6 +14,7 @@ int main() {
 
     int M, N;
     int evenstr = 0;
+    bool even;
 
     cout << "Введите количество строк М: ";
     cin >> M;
@@ -34,13 +35,15 @@ int main() {
     }
 
     for (int i = 0; i < M; i++) {
+        even = true;
         for (int j = 0; j < N; j++) {
             if (matrix[i][j] % 2 != 0) {
-                break;
+                even = false;
+                break;  
             }
-            else {
-                evenstr = i + 1;
-            }
+        }
+        if (even > 0) {
+            evenstr = i + 1;
         }
     }
 
